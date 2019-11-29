@@ -1,0 +1,63 @@
+PIC X(10)
+PIC A(11)
+PIC G(12) DISPLAY-1
+PIC N(14)
+"type":"string",
+"maxLength":n
+^.{5}[^*].*PIC\s+[X^A^G^N]\s*\((\d+)\).*$
+----------------------------------------
+PIC S9 DISPLAY
+PIC S99 DISPLAY
+PIC S999 DISPLAY
+PIC S9999 DISPLAY
+^.{5}[^*].*PIC\s+S(9+).*$
+"type":"integer",
+"minimum":- (n + 1),
+"maximum":n
+----------------------------------------
+PIC S9(n) DISPLAY
+PIC S9(n) COMP
+PIC S9(n) COMP-4
+PIC S9(n) COMP-5
+PIC S9(n) BINARY
+^.{5}[^*].*PIC\s+S9\s*\((\d+)\).*$
+"type":"integer",
+"minimum":- (n + 1),
+"maximum":n
+----------------------------------------
+PIC 9 DISPLAY
+PIC 99 DISPLAY
+PIC 999 DISPLAY
+PIC 9999 DISPLAY
+^.{5}[^*].*PIC\s+(9+).*$
+"type":"integer",
+"minimum":0,
+"maximum":n
+----------------------------------------
+PIC 9(n) COMP
+PIC 9(n) COMP-4
+PIC 9(n) COMP-5
+PIC 9(n) BINARY
+^.{5}[^*].*PIC\s+9\s*\((\d+)\).*$
+"type":"integer",
+"minimum":0,
+"maximum":n
+----------------------------------------
+PIC S9(m)V9(n) COMP-3
+^.{5}[^*].*PIC\s+S9\s*\((\d+)\)V9\((\d+)\).*$
+"type":"number",
+"description":"decimal",
+"minimum": x,
+"maximum": y,
+"multipleOf": z
+----------------------------------------
+PIC 9(m)V9(n) COMP-3
+^.*PIC\s+9\s*\((\d+)\)V9\((\d+)\).*$
+"type":"number",
+"description":"decimal",
+"minimum": 0,
+"maximum": y,
+"multipleOf": z
+----------------------------------------
+PIC S9(m)V9(n) DISPLAY
+^.*PIC\s+S9\s*\((\d+)\)V9\((\d+)\).*$

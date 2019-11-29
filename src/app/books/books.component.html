@@ -1,0 +1,13 @@
+<div class="p-grid">
+  <div class="p-offset-1 p-md-3">
+    <h2>Available Books List</h2>
+  </div>
+</div>
+<div class="p-grid " *ngFor="let book of books; index as book-id">
+  <div class="p-offset-1 p-md-3">
+    <p-card header="{{book.name}}">
+      <div>{{book.description}}</div>
+    </p-card>
+  </div>
+</div>
+

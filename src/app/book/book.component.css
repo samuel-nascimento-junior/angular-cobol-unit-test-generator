@@ -1,0 +1,13 @@
+p {
+  font-family: Lato;
+  font-size: 16px;
+}
+
+textarea{
+  font-family: 'Cutive Mono', monospace;
+  font-size: 14px;
+}
+
+.statement {
+  color: red;
+}

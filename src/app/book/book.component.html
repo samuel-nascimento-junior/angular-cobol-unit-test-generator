@@ -1,0 +1,54 @@
+<div class="p-grid">
+  <div class="p-md-12 p-sm-12">
+    <p-accordion [activeIndex]="accordion_index">
+      <p-accordionTab header="Book edit" [selected]="true" (click)="setAccordion(1)" >
+        <textarea pInputTextarea [(ngModel)]="book" style="width:100%; resize:none" [rows]="20"></textarea>
+        <div class="p-grid">
+          <div class="p-md-3">
+            <button pButton type="button" label="Parse" (click)="parseBook()"></button>
+          </div>
+        </div>
+      </p-accordionTab>
+      <p-accordionTab header="Configuration" (click)="setAccordion(2)">
+          <div class="p-grid">
+            <div class="p-md-offset-1 p-md-10">
+              <div class="p-grid">
+                <div class="p-md-4">
+                  <p>Name</p>
+                </div>
+                <div class="p-md-2">
+                  <p>Type</p>
+                </div>
+                <div class="p-md-2">
+                  <p>Minimum</p>
+                </div>
+                <div class="p-md-2">
+                  <p>Maximun</p>
+                </div>                                                
+              </div>
+              <div *ngFor="let item of list" class="p-grid">
+                <div class="p-md-4">
+                  <p>{{item.name}}</p>
+                </div>
+                <div class="p-md-2">
+                  <p>{{item.typeOf}}</p>
+                </div>
+                <div class="p-md-2">
+                  <p>{{item.minimum}}</p>                                    
+                </div>
+                <div class="p-md-2">
+                  <p>{{item.maximun}}</p>
+                </div>
+                <div class="p-md-2">
+                  <button pButton  type="button" icon="pi pi-cog" iconPos="left"></button>
+                </div>
+              </div>
+            </div>
+          </div>
+      </p-accordionTab>
+      <p-accordionTab header="Examples of output" (click)="setAccordion(3)">
+        <div>Teste</div>
+      </p-accordionTab>
+    </p-accordion>
+  </div>
+</div>
