@@ -19,6 +19,7 @@ import {BookComponent} from './book/book.component';
 import {ConfigurationsComponent } from './configurations/configurations.component';
 import {TypesComponent } from './types/types.component';
 import {AccordionModule} from 'primeng/accordion';
+import {TableModule} from 'primeng/table';
 
 @NgModule({
   imports:      [ 
@@ -31,6 +32,7 @@ import {AccordionModule} from 'primeng/accordion';
     InputTextareaModule,
     CardModule,
     AccordionModule,
+    TableModule,
     RouterModule.forRoot([
       {path: 'books/new', component: BookComponent},
       {path: 'types/new', component: TypesComponent}
