@@ -20,15 +20,6 @@ export class BookComponent implements OnInit {
   private book: string; 
   private list: Array<Column>; 
   private aux: string[];
-  private accordion_index: number = 0;
-
-  setAccordion(i){
-    this.accordion_index = i;
-  }
-
-  openConfiguration() {
-    this.accordion_index = 2;
-  }
 
   parseBook(){
     this.list = [];
@@ -38,7 +29,6 @@ export class BookComponent implements OnInit {
     for(let i=0; i<this.aux.length; i++){
       this.parseItem(this.aux[i]);
     }
-    this.openConfiguration();
   }
 
   parseItem(item: string){
