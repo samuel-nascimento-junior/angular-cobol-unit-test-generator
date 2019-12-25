@@ -1,11 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import {AccordionModule} from 'primeng/accordion';
 
-class Column{
+class BookFIeld{
   name: string;
   typeOf: string;
-  minimum: number;
-  maximun: number;
+  size: number;
 }
 
 @Component({
@@ -18,7 +17,7 @@ class Column{
 export class BookComponent implements OnInit {
 
   private book: string; 
-  private list: Array<Column>; 
+  private list: Array<BookFIeld>; 
   private aux: string[];
 
   parseBook(){
@@ -34,11 +33,10 @@ export class BookComponent implements OnInit {
   parseItem(item: string){
     var parse = item.match(/^.{5}[^*]\s+\d+\s+(\S+)\s+PIC\s+[X^A^G^N]\s*\((\d+)\).*$/);
     if(parse){
-      let new_column = new Column();
+      let new_column = new BookFIeld();
       new_column.name = parse[1];
       new_column.typeOf = 'String';
-      new_column.maximun = parseInt(parse[2]);
-      new_column.minimum = 0;
+      new_column.size = parseInt(parse[2]);
       this.list.push(new_column);
       return;
     }
