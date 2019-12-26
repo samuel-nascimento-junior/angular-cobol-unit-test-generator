@@ -4,7 +4,7 @@ PIC G(12) DISPLAY-1
 PIC N(14)
 "type":"string",
 "maxLength":n
-^.{5}[^*].*PIC\s+[X^A^G^N]\s*\((\d+)\).*$
+^.{5}[^*]\s+\d+\s+(\S+)\s+PIC\s+([X^A^G^N])\s*\((\d+)\).*$ OK
 ----------------------------------------
 PIC S9 DISPLAY
 PIC S99 DISPLAY

@@ -36,7 +36,8 @@ export class BookComponent implements OnInit {
   }
 
   parseItem(item: string){
-    var parse = item.match(/^.{5}[^*]\s+\d+\s+(\S+)\s+PIC\s+([X^A^G^N])\s*\((\d+)\).*$/);
+    let parse = null; 
+    parse = item.match(/^.{5}[^*]\s+\d+\s+(\S+)\s+PIC\s+([X^A^G^N])\s*\((\d+)\).*$/);
     if(parse){
       let new_column = new BookFIeld();
       new_column.name = parse[1];
@@ -46,6 +47,17 @@ export class BookComponent implements OnInit {
       this.fields.push(new_column);
       return;
     }
+
+    parse = item.match(/^.{5}[^*]\s+\d+\s+(\S+)\s+PIC\s+([X^A^G^N])\s*\((\d+)\).*$/);
+    if(parse){
+      let new_column = new BookFIeld();
+      new_column.name = parse[1];
+      new_column.typeOf = 'Integer';
+      new_column.cobol_type = 'PIC ' + parse[2];
+      new_column.size = parseInt(parse[3]);
+      this.fields.push(new_column);
+      return;
+    }    
   }
 
   constructor() {
