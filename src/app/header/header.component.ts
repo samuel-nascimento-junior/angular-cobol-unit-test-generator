@@ -17,17 +17,26 @@ export class HeaderComponent implements OnInit {
         label: 'New',
         icon: 'pi pi-plus',
         items: [
-          {label: 'New Book', icon: 'pi pi-align-left', routerLink: '/books/new'},
-          {label: 'New Configuration', icon: 'pi pi-sliders-h'}
+          {label: 'Book', icon: 'pi pi-align-left', routerLink: '/books/new'},
+          {label: 'Type', icon: 'pi pi-sliders-h'},
+          {label: 'Sequencial File', icon: 'pi pi-file-o'}
         ]
       },
       {
         label: 'Edit',
         icon: 'pi pi-pencil',
         items: [
-          {label: 'Edit Book', icon: 'pi pi-align-left'},       
-          {label: 'Edit Configuration', icon: 'pi pi-sliders-h'}
+          {label: 'Book', icon: 'pi pi-align-left'},       
+          {label: 'Type', icon: 'pi pi-sliders-h'}
         ]
+    },
+    { 
+      label: 'Program Call',
+      icon: 'pi pi-play'
+    },
+    { 
+      label: 'Unity Test',
+      icon: 'pi pi-undo'
     }];
   }
 }

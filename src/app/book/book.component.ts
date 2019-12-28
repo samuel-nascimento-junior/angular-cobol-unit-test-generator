@@ -24,13 +24,18 @@ export class BookComponent implements OnInit {
     this.fields = [];
     let aux = this.book.split('\n');
     for(let i=0; i<aux.length; i++){
+      aux[i] = aux[i].replace('\s+$', '');
       if(aux[i].match(/^.{5}[*].*$/)){
         delete aux[i];
       }
     }
-    let book_text = aux.join();
+    let book_text = aux.join('');
+    console.log(book_text);
     aux = book_text.split('.');
     for(let i=0; i<aux.length; i++){
+      aux[i] = aux[i].replace('\,', '');
+      aux[i] = aux[i].replace('\s+', '\s');
+      console.log(aux[i]);
       this.parseItem(aux[i]);
     }
   }
